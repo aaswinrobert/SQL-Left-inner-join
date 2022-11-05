@@ -1,0 +1,52 @@
+Employee Table Creation:
+
+/*create table Employees(
+	EmpID int NOT NULL,
+	EmpName Varchar(50) NOT NULL,
+	Address Varchar(50) NOT NULL,
+	Designation Varchar(50) NOT NULL,
+	Primary Key(EmpID)
+);*/
+--insert into Employees values(1,'Charlotte Robinson','Chicago','Consultant')
+--insert into Employees values(2,'Madison Phillips','Dallas','Senior Analyst')
+--insert into Employees values(3,'Emma Hernandez','Phoenix','Senior Analyst')
+--insert into Employees values(4,'Samantha Sanchez','San Diego','Principal Consultant')
+--insert into Employees values(5,'Sadie Ward','San Antonio','Consultant')
+--insert into Employees values(6,'Savannah Perez','New York','Principal Consultant'),(7,'Victoria Gray','Los Angeles','Assistant')
+--insert into Employees values(8,'Alyssa Lewis','Houston','Consultant'),(9,'Anna Lae','San Jose','Principal Consultant'),(10,'Riley Hall','Philadelphia','Senior Analyst')
+select * from Employees
+
+
+Department Table Creation:
+
+create table Department(
+	EmpID int NOT NULL,
+	DeptID int NOT NULL,
+	DeptName Varchar(50) NOT NULL,
+	Primary Key(EmpID)
+);
+insert into Department values(2,1,'Document Control'),(3,2,'Finance'),(4,3,'Engineering'),(5,4,'Facilities and Maintenance'),(6,2,'Finance'),(10,4,'Finance and Maintenance')
+select * from Department
+
+
+a)  Full Outer Join:
+
+SELECT * 
+FROM Employees 
+FULL OUTER JOIN Department
+ON Employees.EmpID=Department.EmpID;
+
+b)  Left Outer Join
+
+SELECT * 
+FROM Employees 
+LEFT OUTER JOIN Department
+ON Employees.EmpID=Department.EmpID;
+
+
+c) Right Outer Join
+
+SELECT * 
+FROM Employees 
+RIGHT OUTER JOIN Department
+ON Employees.EmpID=Department.EmpID;
